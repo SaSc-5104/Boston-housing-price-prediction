@@ -1,2 +1,2 @@
 # Boston-housing-price-prediction
-Comparing a linear regression and neural network model on predicting the housing prices in Boston using the Boston housing dataset
+Predicts median Boston-area home prices (MEDV) by comparing a Linear Regression baseline against a feedforward Neural Network (MLP)
