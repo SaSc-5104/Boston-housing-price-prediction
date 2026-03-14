@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
-
+from evaluate import compute_metrics, plot_predictions
 
 def train_linear(X_train, y_train):
     model = LinearRegression()
@@ -10,7 +10,12 @@ def train_linear(X_train, y_train):
 
 def evaluate_linear(model, X_test, y_test, feature_names, save_dir = "report"):
     y_pred = model.predict(X_test)
-    print(f"\n RESULTS:")
+    print(f"\n LINEAR REGRESSION RESULTS:")
+    metrics = compute_metrics(y_test, y_pred)
+    for k,v in metrics.items():
+        print(f"    {k}: {v:.4f}")
+    plot_predictions(y_test, y_pred, title = "Linear Regression: Predicted vs Actual", save_path = f"{save_dir}/linear_predictions.png")
+    return metrics, y_pred
 
 def _plot_coefficients(coefs, feature_names, save_dir):
     sorted_idx = np.argsort(np.abs(coefs))[::-1]
