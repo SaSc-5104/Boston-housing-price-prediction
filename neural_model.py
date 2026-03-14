@@ -75,12 +75,7 @@ def evaluate_neural(model, X_test, y_test, history, save_dir="report"):
     for k, v in metrics.items():
         print(f"  {k}: {v:.4f}")
 
-    plot_predictions(
-        y_test, y_pred,
-        title="Neural Network: Predicted vs Actual",
-        save_path=f"{save_dir}/neural_predictions.png"
-    )
-
+    plot_predictions(y_test, y_pred, title="Neural Network: Predicted vs Actual", save_path=f"{save_dir}/neural_predictions.png")
     _plot_loss_curve(history, save_dir)
 
     return metrics, y_pred
