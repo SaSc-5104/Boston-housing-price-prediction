@@ -1,6 +1,6 @@
 import os
 from data import load_data, preprocess
-from linear import train_linear, evaluate_linear
+from linear_model import train_linear, evaluate_linear
 from neural_model import train_neural, evaluate_neural
 from evaluate import plot_comparison, print_comparison_table
 
