@@ -56,7 +56,7 @@ def plot_comparison(metrics_linear, metrics_neural, save_dir = "report"):
     path = f"{save_dir}/model_comparison.png"
     plt.savefig(path, dpi=150)
     plt.close()
-    print(f"    Saved: {path}")
+    print(f"Saved: {path}")
 
 def print_comparison_table(metrics_linear, metrics_neural):
     print("\n" + "=" * 50)

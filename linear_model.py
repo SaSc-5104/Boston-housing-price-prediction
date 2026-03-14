@@ -10,7 +10,7 @@ def train_linear(X_train, y_train):
 
 def evaluate_linear(model, X_test, y_test, feature_names, save_dir = "report"):
     y_pred = model.predict(X_test)
-    print(f"\n LINEAR REGRESSION RESULTS:")
+    print(f"\nLINEAR REGRESSION RESULTS:")
     metrics = compute_metrics(y_test, y_pred)
     for k,v in metrics.items():
         print(f"    {k}: {v:.4f}")

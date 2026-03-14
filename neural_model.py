@@ -70,7 +70,7 @@ def evaluate_neural(model, X_test, y_test, history, save_dir="report"):
         X_tensor = torch.tensor(X_test, dtype=torch.float32)
         y_pred = model(X_tensor).numpy()
 
-    print("\nNeural Network Results:")
+    print("\nNEURAL NETWORK RESULTS:")
     metrics = compute_metrics(y_test, y_pred)
     for k, v in metrics.items():
         print(f"  {k}: {v:.4f}")
@@ -97,4 +97,4 @@ def _plot_loss_curve(history, save_dir):
     plt.tight_layout()
     plt.savefig(f"{save_dir}/neural_loss_curve.png", dpi=150)
     plt.close()
-    print(f"  Saved: {save_dir}/neural_loss_curve.png")
+    print(f"Saved: {save_dir}/neural_loss_curve.png")

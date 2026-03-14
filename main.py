@@ -35,7 +35,7 @@ def main():
     plot_comparison(metrics_linear, metrics_neural, save_dir = SAVE_DIR)
 
     print(f"\nAll plots saved to ./{SAVE_DIR}/")
-    print("DONE")
+    print(f"DONE\n")
 
 if __name__ == "__main__":
     main()
