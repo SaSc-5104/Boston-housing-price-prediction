@@ -28,14 +28,14 @@ def plot_predictions(y_true, y_pred, title = "Predicted vs Actual", save_path=No
     else:
         plt.show()
 
-def plot_comparison(metrics_linear, metrics_neutral, save_dir = "report"):
+def plot_comparison(metrics_linear, metrics_neural, save_dir = "report"):
     metric_names = ["MSE", "RMSE", "MAE", "R2"]
     lin_vals = []
     for m in metric_names:
         lin_vals.append(metrics_linear[m])
     nn_vals = []
     for m in metric_names:
-        nn_vals.append(metrics_neutral[m])
+        nn_vals.append(metrics_neural[m])
     
     x = np.arange(len(metric_names))
     width = 0.35
@@ -58,7 +58,7 @@ def plot_comparison(metrics_linear, metrics_neutral, save_dir = "report"):
     plt.close()
     print(f"    Saved: {path}")
 
-def print_comparison_table(metrics_linear, metrics_neutral):
+def print_comparison_table(metrics_linear, metrics_neural):
     print("\n" + "=" * 50)
     print(f"{'Metric':<10} {'Linear Reression':>18} {'Neural Network':>15}")
     print("=" * 50)
